@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --container-color: #1a1e21;
+    --second-color: rgb(250, 160, 75); 
+    --text-color: #172317;
+    --bg-color: #fff;
+}
+::selection{
+    color: var(--bg-color);
+    background: var(--second-color);
+}
+body {
+    background: var(--bg-color);
+    margin-top: 20px;
+
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    padding-left: 200px;
+    padding-right: 200px;
+    box-shadow: 0 0 30px var(--second-color);
+
+  
+    
+}
+
+header.shadow{
+    background: var(--second-color);
+    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+    transition: .5s;
+   
+}
+
+header.shadow .logo{
+    color: rgb(250, 160, 75);
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--second-color);
+    text-decoration: none;
+
+}
+.nav-menu {
+    display: flex;
+    list-style-type: none; /* Liste işaretlerini kaldır */
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Menü öğelerinin yerleşimi ve genel stiller */
+.nav-menu .menu-item {
+    margin-right: 20px;  /* Öğeler arasındaki mesafeyi ayarlayın */
+    padding: 10px 15px;  /* İçerik etrafında boşluk bırakın */
+    color: var(--second-color);  /* Yazı rengi */
+    cursor: pointer; /* Fare üzerine geldiğinde imlecin el işaretine dönüşmesi için */
+    font-size: 1rem; /* Yazı boyutu */
+    transition: color 0.3s ease; /* Renk geçişi */
+    
+}
+
+/* Linklere uygulanacak stil */
+.nav-menu .menu-item a {
+    text-decoration: none;  /* Link altını çizme */
+    color: inherit;  /* Linkin yazı rengini üst öğesinin renginden almasını sağla */
+}
+
+/* 'Users' öğesini turuncu yapmak için */
+.nav-menu .users-item a {
+    color: rgb(250, 160, 75);/* 'Users' öğesini turuncu yap */
+}
+
+/* Menü öğeleri üzerine gelindiğinde renk değişimi */
+.nav-menu .menu-item:hover {
+    color:rgb(250, 160, 75); /* Hover rengini belirleyin */
+}
+
+/* Menü öğelerini sola biraz daha yakınlaştır */
+.nav-menu {
+    padding-left: 10px;  /* Menü öğelerini sola kaydır */
+    
+}
+
+.login{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color: var(--bg-color);
+    text-decoration: none;
+
+}
+
+.login:hover{
+    background: rgb(250, 160, 75);
+    transition: .5s;
+    
+}
+
+.signup{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color: var(--bg-color);
+    text-decoration: none;
+
+}
+
+.signup:hover{
+    background: rgb(250, 160, 75);
+    transition: .5s;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    
+}
+
+
+.main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding-left: 30px;
+  background: repeating-linear-gradient(#0000 0 calc(1.2rem - 1px), #66afe1 0 1.2rem) right bottom / 100% 100%, linear-gradient(red 0 0) 30px 0 / 2px 100% #fff;
+  background-repeat: no-repeat;
+  line-height: 1.2rem;
+  -webkit-mask: radial-gradient(circle .8rem at 2px 50%, #0000 98%, #000) 0 0 / 100% 2.4rem;
+}
+
+.card_content {
+  padding: 1.2rem;
+}
+
+h2.card_title,
+p {
+  margin: 1.2rem 0;
+}
+
+h2.card_title {
+  font-size: 1.3em;
+}
+
+html {
+  font-size: 15px;
+}
+
+/* Form Styling */
+.form-container {
+  margin-top: 2rem;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-container label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+.form-container input[type="text"],
+.form-container textarea,
+.form-container input[type="file"] {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.form-container textarea {
+  resize: vertical;
+}
+
+.form-container button {
+  padding: 1rem 2rem;
+  background-color: rgb(250, 160, 75);;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.form-container button:hover {
+  background-color: rgb(250, 160, 75);
+}
+
+.card_image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+#return-to-top {
+  margin-left: 700px;
+  color:  rgb(250, 160, 75);
+  border-color: rgb(250, 160, 75);
+  font-size: 13px;
+  border: 1px solid rgb(250, 160, 75);;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 6px 20px;
+  z-index: 4;
+  transition: all 0.3s ease-in-out;
+  
+}
+
+#return-to-top i {
+  border-color: rgb(250, 160, 75);
+  font-size: 11px;
+  vertical-align: middle;
+  margin-right: 10px;
+  
+}
+
+#return-to-top:hover {
+  background-color: rgb(250, 160, 75);
+  border-color: rgb(250, 160, 75);
+  color: white;
+}

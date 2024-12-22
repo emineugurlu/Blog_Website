@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --container-color: #1a1e21;
+    --second-color: rgb(250, 160, 75); 
+    --text-color: #172317;
+    --bg-color: #fff;
+}
+::selection{
+    color: var(--bg-color);
+    background: var(--second-color);
+}
+body {
+    background:var(--bg-color);
+    margin-top: 20px;
+    body{margin-top:20px;}
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    box-shadow: 0 0 30px var(--second-color);
+    
+    
+}
+
+header.shadow{
+    background: var(--second-color);
+    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+    transition: .5s;
+}
+
+header.shadow .logo{
+    color: rgb(250, 160, 75);
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--second-color);
+
+}
+.nav-menu {
+    display: flex;
+    list-style-type: none; /* Liste işaretlerini kaldır */
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Menü öğelerinin yerleşimi ve genel stiller */
+.nav-menu .menu-item {
+    margin-right: 20px;  /* Öğeler arasındaki mesafeyi ayarlayın */
+    padding: 10px 15px;  /* İçerik etrafında boşluk bırakın */
+    color: var(--second-color);  /* Yazı rengi */
+    cursor: pointer; /* Fare üzerine geldiğinde imlecin el işaretine dönüşmesi için */
+    font-size: 1rem; /* Yazı boyutu */
+    transition: color 0.3s ease; /* Renk geçişi */
+    
+}
+
+/* Linklere uygulanacak stil */
+.nav-menu .menu-item a {
+    text-decoration: none;  /* Link altını çizme */
+    color: inherit;  /* Linkin yazı rengini üst öğesinin renginden almasını sağla */
+}
+
+/* 'Users' öğesini turuncu yapmak için */
+.nav-menu .users-item a {
+    color: rgb(250, 160, 75);/* 'Users' öğesini turuncu yap */
+}
+
+/* Menü öğeleri üzerine gelindiğinde renk değişimi */
+.nav-menu .menu-item:hover {
+    color:rgb(250, 160, 75); /* Hover rengini belirleyin */
+}
+
+/* Menü öğelerini sola biraz daha yakınlaştır */
+.nav-menu {
+    padding-left: 10px;  /* Menü öğelerini sola kaydır */
+    
+}
+
+.login{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color: var(--bg-color);
+}
+
+.login:hover{
+    background: rgb(250, 160, 75);
+    transition: .5s;
+}
+
+.signup{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color: var(--bg-color);
+}
+
+.signup:hover{
+    background: rgb(250, 160, 75);
+    transition: .5s;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    
+}
+
+
+
+
+.ui-w-80 {
+    width : 80px !important;
+    height: auto;
+}
+
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background  : rgba(0, 0, 0, 0);
+    color       : #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #26B4FF;
+    background  : transparent;
+    color       : #26B4FF;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+.btn-facebook {
+    border-color: rgba(0, 0, 0, 0);
+    background  : #3B5998;
+    color       : #fff;
+}
+
+.btn-instagram {
+    border-color: rgba(0, 0, 0, 0);
+    background  : #000;
+    color       : #fff;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow     : 0 1px 4px rgba(24, 28, 33, 0.012);
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position  : absolute;
+    visibility: hidden;
+    width     : 1px;
+    height    : 1px;
+    opacity   : 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+#return-to-top {
+    margin-left: 170px;
+    color:  rgb(250, 160, 75);
+    border-color: rgb(250, 160, 75);
+    font-size: 13px;
+    border: 1px solid rgb(250, 160, 75);;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 6px 20px;
+    z-index: 4;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+#return-to-top i {
+    border-color: rgb(250, 160, 75);
+    font-size: 11px;
+    vertical-align: middle;
+    margin-right: 10px;
+    
+}
+
+#return-to-top:hover {
+    background-color: rgb(250, 160, 75);
+    border-color: rgb(250, 160, 75);
+    color: white;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+

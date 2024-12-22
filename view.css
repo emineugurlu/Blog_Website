@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;0,700;1,400&display=swap');
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --container-color: #1a1e21;
+    --second-color: rgb(250, 160, 75); 
+    --text-color: #172317;
+    --bg-color: #fff;
+}
+::selection{
+    color: var(--bg-color);
+    background: var(--second-color);
+}
+body {
+    background: var(--bg-color);
+    margin-top: 20px;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 200;
+    padding-right: 200px;
+    padding-left: 200px;
+    box-shadow: 0 0 30px var(--second-color);
+   
+    
+    
+}
+
+header.shadow{
+    background: var(--second-color);
+    box-shadow: 0 1px 4px hsl(0 4% 14% / 10%);
+    transition: .5s;
+}
+
+header.shadow .logo{
+    color: rgb(250, 160, 75);
+}
+.logo{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--second-color);
+    text-decoration: none;
+
+}
+.nav-menu {
+    display: flex;
+    list-style-type: none; /* Liste işaretlerini kaldır */
+    margin: 0;
+    padding: 0;
+    
+}
+
+/* Menü öğelerinin yerleşimi ve genel stiller */
+.nav-menu .menu-item {
+    margin-right: 20px;  /* Öğeler arasındaki mesafeyi ayarlayın */
+    padding: 10px 15px;  /* İçerik etrafında boşluk bırakın */
+    color: var(--second-color);  /* Yazı rengi */
+    cursor: pointer; /* Fare üzerine geldiğinde imlecin el işaretine dönüşmesi için */
+    font-size: 1rem; /* Yazı boyutu */
+    transition: color 0.3s ease; /* Renk geçişi */
+    
+}
+
+/* Linklere uygulanacak stil */
+.nav-menu .menu-item a {
+    text-decoration: none;  /* Link altını çizme */
+    color: inherit;  /* Linkin yazı rengini üst öğesinin renginden almasını sağla */
+}
+
+/* 'Users' öğesini turuncu yapmak için */
+.nav-menu .users-item a {
+    color: rgb(250, 160, 75);/* 'Users' öğesini turuncu yap */
+}
+
+/* Menü öğeleri üzerine gelindiğinde renk değişimi */
+.nav-menu .menu-item:hover {
+    color:rgb(250, 160, 75); /* Hover rengini belirleyin */
+}
+
+/* Menü öğelerini sola biraz daha yakınlaştır */
+.nav-menu {
+    padding-left: 10px;  /* Menü öğelerini sola kaydır */
+    
+}
+
+.login{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.login:hover{
+    background: rgb(250, 160, 75);
+    transition: .5s;
+}
+
+.signup{
+    padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 4px;
+    background: var(--second-color);
+    color: var(--bg-color);
+    text-decoration: none;
+}
+
+.signup:hover{
+    background: rgb(250, 160, 75);
+    transition: .5s;
+}
+.nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    
+}
+.btn{
+    display: block;
+    color:var(--bg-color);
+    margin-top:300px;
+    padding:5px 10px;
+    text-align: center;
+}
+.btn label{
+    background-color: var(--second-color);
+    display: inline-block;
+    margin:0 20px;
+    padding:20px;
+}
+.modal{
+    width:400px;
+   
+    margin:auto;
+    position: fixed;
+    top:50%;
+    left:50%;
+    transition-delay: 2s;
+    transform: translate(-50%, -50%) scale(0);
+}
+.modal .header{
+    background-image: linear-gradient(to top left,
+    #efbd81,  #e3a936);
+        min-height:200px;
+        border-radius: 30px;
+        position: relative;
+        padding:20px 20px 100px 20px;
+        opacity: 0;
+        transition: 0.5s;
+        transform: translate(0,70px);
+}
+.modal img{
+    position: absolute;
+}
+.modal img:nth-child(1){
+    top:-10px;
+    width:90%;
+    left:5%;
+    opacity: 0;
+    transform: translate(0,70px);
+    transition: 0.7s;
+    border-radius: 30px;
+}
+.modal img:nth-child(2){
+    top:170px;
+    transform: rotate(80deg);
+    width:100px;
+    left:-50px;
+    opacity:0;
+    transition: 1s;
+
+}
+.modal img:nth-child(3){
+    transform: rotate(-80deg);
+    bottom:-90px;
+    width:100px;
+    right:-40px;
+    opacity:0;
+    transition: 1s;
+}
+.modal .content{
+    background-color:var(--second-color);
+    padding:20px;
+    min-height: 100px;
+    border-radius: 30px;
+    backdrop-filter: blur(20px);
+    color:#eee;
+    font-family: monospace;
+    transform: translate(0,70px);
+    opacity: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+.modal .confirm{
+    text-align: center;
+    margin-top:30px;
+}
+.modal .content label,
+.modal .content button{
+    display: inline-block;
+    border:none;
+    padding:10px;
+    color:#fff;
+    margin: 0 10px;
+}
+.modal .content label{
+    background-color: #ffffff4D;
+}
+.modal .content button{
+    background-color: rgb(250, 160, 75);;
+}
+.modal input[name="setingModal"]{
+    display: none;
+}
+.modal:has(input[name="setingModal"]:checked){
+    transition: 0s;
+    transform: translate(-50%,-50%) scale(1);
+}
+.modal:has(input[name="setingModal"]:checked) .header{
+    opacity: 1;
+    transform: translate(0,0);
+}
+.modal:has(input[name="setingModal"]:checked) .content{
+    transition-delay: 0s;
+    opacity: 1;
+    transform: translate(0,-70px);
+}
+.modal:has(input[name="setingModal"]:checked) .header img:nth-child(1){
+    opacity: 1;
+    transform: translate(0,0);
+    transition-delay: 0.3s;
+}
+.modal:has(input[name="setingModal"]:checked) .header img:nth-child(2){
+    opacity: 1;
+    transform: rotate(-20deg);
+    transition-delay: 0.5s;
+    top:-20px;
+}
+.modal:has(input[name="setingModal"]:checked) .header img:nth-child(3){
+    opacity: 1;
+    transform: rotate(20deg);
+    transition-delay: 0.5s;
+    bottom:20px;
+}

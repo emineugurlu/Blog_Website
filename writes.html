@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bit And Byte</title>
+    <link rel="stylesheet" href="writes.css">
+</head>
+<body>
+    <header>
+        <div class="nav container">
+            <a href="index.html" class="logo">Bit And Byte</a>
+            <ul class="nav-menu">
+                <li class="menu-item users-item"><a href="users.html">Users</a></li>
+                <li class="menu-item"><a href="writes.html">Write</a></li>
+                <li class="menu-item"><a href="view.html">View</a></li>
+                <li class="menu-item"><a href="show.html">Show</a></li>
+            </ul>
+            <div class="nav-links">
+                <a href="login.html" class="login">Login</a>
+                <a href="register.html" class="signup">Sing up</a>
+            </div>
+        </div>
+    </header>
+    <br>
+    <br>
+        <div class="form-container">
+            <h2>Edit Blog</h2>
+            <form id="productForm">
+                <label for="title">Title</label>
+                <input type="text" id="title" placeholder="Enter  title" required>
+
+                <label for="description">Description:</label>
+                <textarea id="description" placeholder="Enter  description" required></textarea>
+
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" accept="image/*">
+
+                <button type="submit">Update Blog</button>
+            </form>
+        </div>
+        <br>
+        
+       
+    </div>
+
+    <script>
+        // Form Submit İşlemleri
+        document.getElementById('productForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Formdan değerleri al
+            const title = document.getElementById('title').value;
+            const description = document.getElementById('description').value;
+            const image = document.getElementById('image').files[0];
+
+            // Ürün kartını güncelle
+            document.getElementById('productTitle').textContent = title;
+            document.getElementById('productDescription').textContent = description;
+
+            // Eğer bir resim seçilmişse, resmi göster
+            if (image) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('productImage').src = e.target.result;
+                };
+                reader.readAsDataURL(image);
+            }
+        });
+
+        // Sayfa Yüklendiğinde Scrollbar Stilini Ekle
+        document.addEventListener("DOMContentLoaded", () => {
+            const style = document.createElement('style');
+            style.textContent = `
+              ::-webkit-scrollbar {
+                width: 12px;
+              }
+
+              ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+              }
+
+              ::-webkit-scrollbar-thumb {
+                background: rgb(250, 160, 75);
+                border-radius: 6px;
+              }
+
+              ::-webkit-scrollbar-thumb:hover {
+                background: rgba(250, 160, 75, 0.8);
+              }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
